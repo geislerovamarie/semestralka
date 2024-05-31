@@ -1,8 +1,7 @@
 import NewCarForm from '@/components/NewCarForm'
-import { fetchBrands, fetchModels } from '@/utils/actions'
+import { fetchBrands, fetchModels } from '@/utils/fetch'
 import prisma from '@/utils/prisma'
 import Link from 'next/link'
-
 
 
 const NewCarPage = async () => {
@@ -14,7 +13,7 @@ const NewCarPage = async () => {
       <Link href={'/'}>
         <button className="back-btn"> Back </button>
       </Link>
-      <h3 className="py-2 text-3xl font-bold tracking-tight text-gray-900"> Add new car </h3>
+      <h2 className="header"> Add new car </h2>
       
       <NewCarForm brands={brands} models={models} />
     </div>
