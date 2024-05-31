@@ -2,6 +2,9 @@ import { CarWithDeps } from '@/types/prismaTypes'
 import Link from 'next/link'
 
 const CarItem = ({ car }: { car: CarWithDeps }) => {
+  const price = car.price != null ? (car.price + " CZK") : "";
+  console.log(price)
+
   return (
     <Link href={`car/${car.id}`} className="cursor-pointer">
       
@@ -11,7 +14,7 @@ const CarItem = ({ car }: { car: CarWithDeps }) => {
           <h1 className="text-base font-medium leading-7 text-gray-900">
             {car.brand.name} {car.model.name}
           </h1>
-          <h2 className="text-sm font-medium leading-5 text-gray-700">{`${car.color} - ${car.location} - ${car.price} CZK`}</h2>
+          <h2 className="text-sm font-medium leading-5 text-gray-700">{`${car.color} - ${car.location} - ${price}`}</h2>
         </div>
       </div>
     </Link>

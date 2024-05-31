@@ -9,18 +9,19 @@ interface DetailParamProps {
 }
 
 const DetailParam: React.FC<DetailParamProps> = (props) => {
+  const displayValue = props.value.includes("null") ? "" : props.value;
+
   return (
     <div className="px-4 py-5 sm:grid sm:grid-cols-4 sm:gap-2 sm:px-2">
       <dt className="text-sm font-medium leading-6 text-gray-900">
         {props.label}
       </dt>
       <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-        {props.value}
+        {displayValue}
       </dd>
     </div>
   );
 };
-
 
 const CarDetailPage = async ({ params }: { params: { id: string } }) => {
   const car = await fetchCarDetail(params.id)

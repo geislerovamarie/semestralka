@@ -5,9 +5,14 @@ import prisma from './prisma'
 
 
 export const createCar = async (formData: FormData) => {
+  const description = formData.get('description')?.toString()
+  const location = formData.get('location')?.toString()
+  const price = formData.get('price') ? parseFloat(formData.get('price')!.toString()) : undefined
+  const color = formData.get('color')?.toString()
+  const year = formData.get('year') ? parseInt(formData.get('year')!.toString()) : undefined
   const modelId = formData.get('modelId')?.toString()
   const brandId = formData.get('brandId')?.toString()
-  const description = formData.get('description')?.toString()
+  
 
   if (!modelId || !brandId /* || !description */) {
     return
@@ -15,9 +20,13 @@ export const createCar = async (formData: FormData) => {
 
   await prisma.car.create({
     data: {
+      description: description,
+      location: location,
+      price: price,
+      color: color,
+      year: year,
       modelId: modelId,
       brandId: brandId,
-      description: description,
     },
   })
 
@@ -25,7 +34,9 @@ export const createCar = async (formData: FormData) => {
 }
 
 // todo searchCar
-export const searchCar = async () => {}
+export const searchCar = async (formData: FormData) => {
+
+}
 
 
 
