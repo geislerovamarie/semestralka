@@ -1,12 +1,11 @@
-import { CarWithDeps } from '@/types/prismaTypes'
-import Link from 'next/link'
+import { CarWithDeps } from "@/types/prismaTypes"
+import Link from "next/link"
 
 const CarItem = ({ car }: { car: CarWithDeps }) => {
-  const price = car.price != null ? (car.price + " CZK") : "";
+  const price = car.price != null ? car.price + " CZK" : ""
 
   return (
     <Link href={`car/${car.id}`} className="cursor-pointer">
-      
       <div className="flex w-full rounded-md border p-2 shadow-sm hover:bg-slate-100">
         <div className="size-12 flex-none rounded-full bg-gray-400" />
         <div className="pl-5">

@@ -1,7 +1,6 @@
-import { Brand, Car, CarModel } from '@prisma/client'
+import { Brand, Car, CarModel } from "@prisma/client"
 
 export interface CarWithDeps extends Car {
-  
   description: string | null
   location: string | null
   price: number | null

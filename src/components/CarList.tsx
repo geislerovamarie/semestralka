@@ -1,5 +1,5 @@
-import CarItem from './CarItem'
-import { CarWithDeps } from '@/types/prismaTypes'
+import CarItem from "./CarItem"
+import { CarWithDeps } from "@/types/prismaTypes"
 
 type Props = {
   cars: CarWithDeps[]

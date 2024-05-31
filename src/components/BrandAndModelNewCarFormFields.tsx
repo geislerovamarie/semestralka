@@ -1,6 +1,6 @@
-'use client'
-import { Brand, CarModel } from '@prisma/client'
-import { Fragment, useMemo, useState } from 'react'
+"use client"
+import { Brand, CarModel } from "@prisma/client"
+import { Fragment, useMemo, useState } from "react"
 
 const BrandAndModelFormFields = ({
   models,
@@ -9,8 +9,8 @@ const BrandAndModelFormFields = ({
   models: CarModel[]
   brands: Brand[]
 }) => {
-  const [brandId, setBrandId] = useState('')
-  const [modelId, setModelId] = useState('')
+  const [brandId, setBrandId] = useState("")
+  const [modelId, setModelId] = useState("")
 
   const filteredModels = useMemo(() => {
     return models.filter((model) => model.brandId === brandId)
@@ -20,15 +20,19 @@ const BrandAndModelFormFields = ({
       <label htmlFor="brand">Brand</label>
       <select
         name="brandId"
-        className='form-field'
+        className="form-field"
         required={true}
         id=""
         value={brandId}
         onChange={(e) => {
-          setBrandId(e.target.value);setModelId('')
+          setBrandId(e.target.value)
+          setModelId("")
         }}
       >
-        <option value="" disabled> Select a brand </option>
+        <option value="" disabled>
+          {" "}
+          Select a brand{" "}
+        </option>
         {brands.map((brand) => (
           <option key={brand.id} value={brand.id}>
             {brand.name}
@@ -37,13 +41,17 @@ const BrandAndModelFormFields = ({
       </select>
 
       <label htmlFor="model">Model</label>
-      <select name="modelId" required={true}
+      <select
+        name="modelId"
+        required={true}
         value={modelId}
-        className='form-field'
+        className="form-field"
         onChange={(e) => setModelId(e.target.value)}
-        disabled={!brandId}>
-
-        <option value="" disabled>Select a model</option>
+        disabled={!brandId}
+      >
+        <option value="" disabled>
+          Select a model
+        </option>
         {filteredModels.map((model) => (
           <option key={model.id} value={model.id}>
             {model.name}
