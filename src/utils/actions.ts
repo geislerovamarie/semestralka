@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation'
 import prisma from './prisma'
+import { revalidatePath } from 'next/cache'
 
 
 export const createCar = async (formData: FormData) => {
@@ -29,8 +30,9 @@ export const createCar = async (formData: FormData) => {
       brandId: brandId,
     },
   })
-
+  console.log("should redirect bro")
   redirect('/')
+  
 }
 
 // todo searchCar

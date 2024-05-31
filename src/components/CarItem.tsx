@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 const CarItem = ({ car }: { car: CarWithDeps }) => {
   const price = car.price != null ? (car.price + " CZK") : "";
-  console.log(price)
 
   return (
     <Link href={`car/${car.id}`} className="cursor-pointer">
