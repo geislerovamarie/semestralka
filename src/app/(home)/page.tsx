@@ -1,5 +1,8 @@
 import CarList from '@/components/CarList'
+import CarSearchForm from '@/components/CarSearchForm'
+import { fetchBrands, fetchModels } from '@/utils/actions'
 import prisma from '@/utils/prisma'
+import Link from 'next/link'
 
 const getCars = async () => {
   const cars = await prisma.car.findMany({
@@ -13,9 +16,22 @@ const getCars = async () => {
 
 const HomePage = async () => {
   const cars = await getCars()
+  const brands = await fetchBrands()
+  const models = await fetchModels()
+
   return (
-    <div>
-      Home Page
+    <div className='m-5'>
+      <h2 className="py-2 text-3xl font-bold tracking-tight text-gray-900">
+        <Link href={"/"}>Velocity Vault</Link>
+      </h2>
+      <div>
+        <Link href={"/car/new"}>
+          <button className="btn"> Add new car </button>
+        </Link>
+
+      </div>
+      <CarSearchForm brands={brands} models={models}/>
+      
       <CarList cars={cars} />
     </div>
   )

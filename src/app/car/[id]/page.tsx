@@ -19,7 +19,9 @@ const CarDetailPage = async ({ params }: { params: { id: string } }) => {
 
   return (
     <div>
-      <Link href={'/'}>Home</Link>
+      <Link href={'/'}>
+        <button className="back-btn"> Back </button>
+      </Link>
       <div>{car?.brand.name}</div>
       <div>{car?.model.name}</div>
       <div>{car?.description}</div>
