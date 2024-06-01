@@ -4,7 +4,6 @@ import BrandAndModelSearchFormFields from "./BrandAndModelSearchFormFields"
 import { CarWithDeps } from "@/types/prismaTypes"
 import CarList from "./CarList"
 import { useState } from "react"
-//import { fetchFilteredCars } from "@/utils/fetch"
 
 const CarSearchForm = ({
   models,

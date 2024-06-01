@@ -32,29 +32,3 @@ export const fetchCars = async () => {
   })
   return cars
 }
-/*
-export const fetchFilteredCars = async (
-  location: string,
-  brandId: string,
-  modelId: string,
-) => {
-  const cars = await prisma.car.findMany({
-    where: {
-      location: {
-        contains: location,
-      },
-      brandId: {
-        contains: brandId,
-      },
-      modelId: {
-        contains: modelId,
-      },
-    },
-    include: {
-      model: true,
-      brand: true,
-    },
-  })
-  return cars
-}
-*/

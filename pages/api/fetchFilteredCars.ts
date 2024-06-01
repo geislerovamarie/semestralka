@@ -1,4 +1,3 @@
-// pages/api/fetchFilteredCars.ts
 import type { NextApiRequest, NextApiResponse } from "next"
 import prisma from "@/utils/prisma"
 import { CarWithDeps } from "@/types/prismaTypes"

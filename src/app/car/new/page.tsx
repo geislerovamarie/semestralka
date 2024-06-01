@@ -1,6 +1,5 @@
 import NewCarForm from "@/components/NewCarForm"
 import { fetchBrands, fetchModels } from "@/utils/fetch"
-import prisma from "@/utils/prisma"
 import Link from "next/link"
 
 const NewCarPage = async () => {
