@@ -32,7 +32,7 @@ export const fetchCars = async () => {
   })
   return cars
 }
-
+/*
 export const fetchFilteredCars = async (
   location: string,
   brandId: string,
@@ -57,3 +57,4 @@ export const fetchFilteredCars = async (
   })
   return cars
 }
+*/

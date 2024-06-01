@@ -1,7 +1,7 @@
 "use server"
 import { redirect } from "next/navigation"
 import prisma from "./prisma"
-import { fetchFilteredCars } from "./fetch"
+//import { fetchFilteredCars } from "./fetch"
 
 export const createCar = async (formData: FormData) => {
   const description = formData.get("description")?.toString()
@@ -34,7 +34,7 @@ export const createCar = async (formData: FormData) => {
   redirect("/")
 }
 
-// todo searchCar
+/*
 export const searchCars = async (formData: FormData) => {
   const location =
     formData.get("location") != null ? formData.get("location")!.toString() : ""
@@ -46,3 +46,4 @@ export const searchCars = async (formData: FormData) => {
   const cars = await fetchFilteredCars(location, brandId, modelId)
   return cars
 }
+*/
