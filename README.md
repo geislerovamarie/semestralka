@@ -1,6 +1,6 @@
 # Semestrální práce - Velocity vault
 
-### 4IT427 Základy programování v React.js
+## 4IT427 Základy programování v React.js
 
 Next.js aplikace pro vyhledání, prohlížení a přidávání aut na prodej.
 

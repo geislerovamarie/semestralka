@@ -1,8 +1,6 @@
-//import { createCar } from '@/utils/actions'
 import { Brand, CarModel } from "@prisma/client"
 import BrandAndModelSearchFormFields from "./BrandAndModelSearchFormFields"
-import { searchCar } from "@/utils/actions"
-import { useState } from "react"
+import { searchCars } from "@/utils/actions"
 
 const CarSearchForm = ({
   models,
@@ -13,7 +11,7 @@ const CarSearchForm = ({
 }) => {
   return (
     <div>
-      <form action={searchCar} className="form-container">
+      <form action={searchCars} className="form-container">
         <label htmlFor="location">Location</label>
         <input
           type="text"

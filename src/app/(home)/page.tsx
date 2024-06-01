@@ -1,6 +1,11 @@
 import CarList from "@/components/CarList"
 import CarSearchForm from "@/components/CarSearchForm"
-import { fetchBrands, fetchCars, fetchModels } from "@/utils/fetch"
+import {
+  fetchBrands,
+  fetchCars,
+  fetchFilteredCars,
+  fetchModels,
+} from "@/utils/fetch"
 import Link from "next/link"
 
 const HomePage = async () => {
@@ -18,8 +23,8 @@ const HomePage = async () => {
           <button className="btn"> Add new car </button>
         </Link>
       </div>
-      <CarSearchForm brands={brands} models={models} />
 
+      <CarSearchForm brands={brands} models={models} />
       <CarList cars={cars} />
     </div>
   )

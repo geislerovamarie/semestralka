@@ -8,9 +8,11 @@ type Props = {
 const CarList = ({ cars }: Props) => {
   return (
     <div>
-      {cars.map((car) => (
-        <CarItem key={car.id} car={car} />
-      ))}
+      {!cars?.length ? (
+        <h2>No Results</h2>
+      ) : (
+        cars.map((car) => <CarItem key={car.id} car={car} />)
+      )}
     </div>
   )
 }

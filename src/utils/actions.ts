@@ -1,8 +1,7 @@
 "use server"
-
 import { redirect } from "next/navigation"
 import prisma from "./prisma"
-import { revalidatePath } from "next/cache"
+import { fetchFilteredCars } from "./fetch"
 
 export const createCar = async (formData: FormData) => {
   const description = formData.get("description")?.toString()
@@ -36,19 +35,14 @@ export const createCar = async (formData: FormData) => {
 }
 
 // todo searchCar
-export const searchCar = async (formData: FormData) => {
-  const location = formData.get("location")
-    ? formData.get("location")!.toString()
-    : ""
-  const modelId = formData.get("modelId")
-    ? formData.get("modelId")!.toString()
-    : ""
-  const brandId = formData.get("brandId")
-    ? formData.get("brandId")!.toString()
-    : ""
+export const searchCars = async (formData: FormData) => {
+  const location =
+    formData.get("location") != null ? formData.get("location")!.toString() : ""
+  const brandId =
+    formData.get("brandId") != null ? formData.get("brandId")!.toString() : ""
+  const modelId =
+    formData.get("modelId") != null ? formData.get("modelId")!.toString() : ""
 
-  console.log(location)
-  console.log(brandId)
-  console.log(modelId)
-  // if not null turn to string
+  const cars = await fetchFilteredCars(location, brandId, modelId)
+  return cars
 }
