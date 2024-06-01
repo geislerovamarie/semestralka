@@ -15,6 +15,12 @@
   .form-container {
     @apply flex flex-col rounded-md bg-lime-100 px-10 py-4 shadow-sm shadow-gray-400;
   }
+  .error-container {
+    @apply w-fit h-fit flex rounded-md bg-red-300 border-black border-2 border-red-700 m-3 px-8 py-6;
+  }
+  .loading-container {
+    @apply w-fit h-fit flex rounded-md bg-yellow-100 border-black border-2 border-yellow-400 m-3 px-8 py-6;
+  }
   .header {
     @apply py-2 text-3xl font-bold tracking-tight text-gray-900;
   }
